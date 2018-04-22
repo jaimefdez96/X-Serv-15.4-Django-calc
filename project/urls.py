@@ -17,11 +17,11 @@ from django.contrib import admin
 
 
 urlpatterns = patterns('',
-    url(r'^$', 'mycalculadorapp.views.barra'),
-    url(r'.*','mycalculadorapp.views.error'),
-    url(r'^(\-?\d+)/suma/(\-?\d+)','mycalculadorapp.views.suma'),
-    url(r'^(\-?\d+)/resta/(\-?\d+)','mycalculadorapp.views.resta'),
-    url(r'^(\-?\d+)/multiplicacion/(\-?\d+)','mycalculadorapp.views.multiplicacion'),
-    url(r'^(\-?\d+)/division/(\-?\d+)','mycalculadorapp.views.division'),
+    url(r'^$', 'calc.views.barra'),
+    url(r'^(\-?\d+)\+(\-?\d+)','calc.views.suma'),
+    url(r'^(\-?\d+)\-(\-?\d+)','calc.views.resta'),
+    url(r'^(\-?\d+)\*(\-?\d+)','calc.views.multiplicacion'),
+    url(r'^(\-?\d+)\/(\-?\d+)','calc.views.division'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'.*','calc.views.error'),
 )
